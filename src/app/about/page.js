@@ -71,23 +71,6 @@ export default function About() {
                             ))}
                         </ul>
 
-                        <p style={{ marginBottom: '1rem', color: 'var(--text-secondary)', fontWeight: 'bold' }}>Certifications:</p>
-                        <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
-                            <Image
-                                src="/assets/img/badges/oscp.png"
-                                alt="OSCP Badge"
-                                width={120}
-                                height={120}
-                                style={{ objectFit: 'contain' }}
-                            />
-                            <Image
-                                src="/assets/img/badges/oscp_plus.png"
-                                alt="OSCP+ Badge"
-                                width={120}
-                                height={120}
-                                style={{ objectFit: 'contain' }}
-                            />
-                        </div>
                     </div>
                 </div>
             </div>
