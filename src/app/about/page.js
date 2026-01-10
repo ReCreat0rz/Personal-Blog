@@ -60,8 +60,8 @@ export default function About() {
                         <ul style={{ listStyle: 'disc', paddingLeft: '1.5rem', marginBottom: '1.5rem' }}>
                             {[
                                 "Plays FPS, RPG, MMORPG, and turn-based games because committing to one genre is too mainstream",
-                                "Currently trapped in the blockchain CTF saga",
-                                "Says “yeah why not” to game CTFs, AI Security CTFs, or iOS exploitation like it’s DLC content",
+                                "Currently trapped in the iOS Application Exploitation Challenge Saga",
+                                "Says 'yeah why not' to game CTFs, AI Security CTFs, or blockchain CTFs like they're just optional DLC side-quests I'm definitely over-leveled for (spoiler: I'm not).",
                                 "Watches anime and reads manga for emotional support",
                                 "Ineffa mains — no regrets, only pain"
                             ].map((item, index) => (
