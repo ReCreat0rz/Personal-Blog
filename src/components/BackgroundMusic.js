@@ -12,42 +12,50 @@ const BackgroundMusic = () => {
 
     audio.volume = 0.4;
 
-    const startPlayback = () => {
-      audio.play()
-        .then(() => {
-          setIsPlaying(true);
-          // Remove listeners once successfully playing
-          removeInteractionListeners();
-        })
-        .catch(err => {
-          console.log("Initial autoplay blocked, waiting for interaction.");
-        });
+    const attemptPlay = () => {
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            setIsPlaying(true);
+            removeInteractionListeners();
+          })
+          .catch(() => {
+            console.log("Initial playback blocked, waiting for interaction.");
+          });
+      }
     };
 
-    const handleInteraction = () => {
-      startPlayback();
+    const handleInteraction = (e) => {
+      console.log("User interaction detected, unlocking audio...");
+      // Mobile browsers (especially Safari) often require a direct .play() call 
+      // in the same tick as the interaction.
+      attemptPlay();
     };
 
     const removeInteractionListeners = () => {
-      window.removeEventListener('click', handleInteraction);
-      window.removeEventListener('touchstart', handleInteraction);
-      window.removeEventListener('touchend', handleInteraction);
-      window.removeEventListener('mousedown', handleInteraction);
-      window.removeEventListener('keydown', handleInteraction);
+      const events = ['click', 'touchstart', 'touchend', 'mousedown', 'keydown'];
+      events.forEach(event => window.removeEventListener(event, handleInteraction));
     };
 
-    // Initial attempt
-    startPlayback();
+    // 1. Initial attempt (might work on Desktop or some Android browsers)
+    attemptPlay();
 
-    // Interaction listeners as fallback for browser policy
-    window.addEventListener('click', handleInteraction);
-    window.addEventListener('touchstart', handleInteraction);
-    window.addEventListener('touchend', handleInteraction);
-    window.addEventListener('mousedown', handleInteraction);
-    window.addEventListener('keydown', handleInteraction);
+    // 2. Add interaction listeners for the "Audio Unlock"
+    const events = ['click', 'touchstart', 'touchend', 'mousedown', 'keydown'];
+    events.forEach(event => window.addEventListener(event, handleInteraction));
+
+    // 3. Handle visibility changes (resume if tab was hidden and brought back)
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        attemptPlay();
+      }
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
       removeInteractionListeners();
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
   }, []);
 
@@ -58,6 +66,7 @@ const BackgroundMusic = () => {
       loop
       preload="auto"
       style={{ display: 'none' }}
+      playsInline // Crucial for mobile behavior
     />
   );
 };
