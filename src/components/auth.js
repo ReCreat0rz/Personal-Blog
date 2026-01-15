@@ -12,12 +12,10 @@ export default function Auth({ children }) {
   const [lockoutTime, setLockoutTime] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Get settings from env or defaults
-  const MAX_ATTEMPTS = parseInt(process.env.NEXT_PUBLIC_MAX_ATTEMPTS || '3');
-  const LOCKOUT_DURATION = 5 * 60 * 1000; // 5 minutes
+  const MAX_ATTEMPTS = parseInt(process.env.NEXT_PUBLIC_MAX_ATTEMPTS || 0x3);
+  const LOCKOUT_DURATION = 0x493E0; 
 
   useEffect(() => {
-    // Check if previously authenticated in this session
     const authStatus = sessionStorage.getItem('blog_authenticated');
     if (authStatus === 'true') {
       setIsAuthenticated(true);
@@ -33,7 +31,6 @@ export default function Auth({ children }) {
         setLockoutTime(Math.ceil((lockoutUntil - now) / 1000));
         setAttempts(storedAttempts);
       } else if (storedAttempts >= MAX_ATTEMPTS) {
-        // Time expired, reset attempts
         localStorage.setItem('password_attempts', '0');
         localStorage.removeItem('password_lockout_until');
         setIsLocked(false);
@@ -48,7 +45,6 @@ export default function Auth({ children }) {
     checkLockout();
     setIsLoading(false);
 
-    // Update countdown every second if locked
     const timer = setInterval(checkLockout, 1000);
     return () => clearInterval(timer);
   }, [MAX_ATTEMPTS]);
