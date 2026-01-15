@@ -1,9 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import styles from './PasswordGate.module.css';
+import styles from './SystemGuard.module.css';
 
-export default function PasswordGate({ children }) {
+export default function SystemGuard({ children }) {
   const [password, setPassword] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [attempts, setAttempts] = useState(0);
