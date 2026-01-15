@@ -16,11 +16,6 @@ export default function Auth({ children }) {
   const LOCKOUT_DURATION = 0x493E0; 
 
   useEffect(() => {
-    const authStatus = sessionStorage.getItem('blog_authenticated');
-    if (authStatus === 'true') {
-      setIsAuthenticated(true);
-    }
-
     const checkLockout = () => {
       const storedAttempts = parseInt(localStorage.getItem('password_attempts') || '0');
       const lockoutUntil = parseInt(localStorage.getItem('password_lockout_until') || '0');
@@ -57,7 +52,6 @@ export default function Auth({ children }) {
 
     if (password.trim() === correctPassword?.trim()) {
       setIsAuthenticated(true);
-      sessionStorage.setItem('blog_authenticated', 'true');
       localStorage.setItem('password_attempts', '0');
       localStorage.removeItem('password_lockout_until');
       setError('');
