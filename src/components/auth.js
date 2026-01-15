@@ -16,6 +16,9 @@ export default function Auth({ children }) {
   const LOCKOUT_DURATION = 0x493E0; 
 
   useEffect(() => {
+    // Explicitly clear legacy auth variable
+    sessionStorage.removeItem('blog_authenticated');
+
     const checkLockout = () => {
       const storedAttempts = parseInt(localStorage.getItem('password_attempts') || '0');
       const lockoutUntil = parseInt(localStorage.getItem('password_lockout_until') || '0');
