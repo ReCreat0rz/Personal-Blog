@@ -1,8 +1,7 @@
 import './globals.css'
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import BackgroundMusic from '../components/BackgroundMusic';
 import Auth from '../components/auth';
+import LayoutWrapper from '../components/LayoutWrapper';
 import { Geist, Geist_Mono, Ubuntu_Mono } from 'next/font/google';
 
 const geistSans = Geist({
@@ -31,7 +30,6 @@ export const viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  // ensure interactive widgets like keyboards do not break layout
   interactiveWidget: 'resizes-content'
 }
 
@@ -40,11 +38,9 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} ${ubuntuMono.variable}`}>
         <Auth>
-          <Header />
-          <main style={{ minHeight: '100vh', paddingTop: '1rem' }}>
+          <LayoutWrapper>
             {children}
-          </main>
-          <Footer />
+          </LayoutWrapper>
           <BackgroundMusic />
         </Auth>
       </body>
