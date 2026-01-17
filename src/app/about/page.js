@@ -53,7 +53,7 @@ export default function About() {
                             I’ve been in cybersecurity for 3+ years, mainly doing offensive security—which is basically just <strong style={{ color: 'var(--accent-color)' }}>“IT’S NOT A BUG, IT’S A VULNERABILITY SPEEDRUN ANY% - DEV forgot to validate anything — new vuln unlocked.”</strong>
                         </p>
                         <p style={{ marginBottom: '2rem' }}>
-                            Most of my learning comes from downloading any app, reversing it like a absolute madman, and suddenly I'm stuck in how to understand the app behave, troubleshooting and debugging I never asked for — the true final boss.
+                            Most of my learning comes from downloading any app, reversing it like a madman, and suddenly I'm stuck in how to understand the app works which takes a week, months or even years, also perform troubleshooting and debugging I never asked for — the true final boss.
                         </p>
                         
                         <p style={{ marginBottom: '1rem', color: 'var(--text-secondary)', fontWeight: 'bold' }}>Lore Dump About Me:</p>
