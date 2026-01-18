@@ -6,9 +6,9 @@ export default function Projects() {
     const projects = [
         {
             title: "BBHT_Automation",
-            description: "Bug Bounty Hunting Tools Automation for Recon by ReCreat0rz. A comprehensive automation suite designed to streamline reconnaissance for bug bounty hunters.",
+            description: "Bug Bounty Hunting Tools Automation for Recon by ReCreat0rz",
             github: "https://github.com/ReCreat0rz/BBHT_Automation",
-            tags: ["Security", "Automation", "Recon", "Python/Bash"]
+            tags: ["Bug Bounty", "Automation", "Recon", "Bash"]
         }
     ];
 
