@@ -62,7 +62,7 @@ const BackgroundMusic = () => {
   return (
     <audio 
       ref={audioRef}
-      src="/unwritten.mp3"
+      src="/unwritten_in_the_star.mp3"
       loop
       preload="auto"
       style={{ display: 'none' }}
