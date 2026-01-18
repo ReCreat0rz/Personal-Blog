@@ -53,7 +53,9 @@ export default function About() {
                             I’m currently deep in the rabbit hole of <strong style={{ color: 'var(--accent-color)' }}>Reverse Engineering</strong> and <strong style={{ color: 'var(--accent-color)' }}>Blockchain Security</strong>, with Game and Smart Contract exploitation being the primary "main-story" content of this blog. I’ve found that the "Strategic Pivot" is the best meta for research—if one topic starts feeling like a soft-lock, I just switch to another to mitigate frustration and keep my mental stack from overflowing while I hunt for the next vuln.
                         </p>
                         <p style={{ marginBottom: '2rem' }}>
-                            Most of my learning comes from downloading any app, reversing it like a madman, and suddenly I'm stuck in how to understand the app works which takes a week, months or even years, also perform troubleshooting and debugging I never asked for — the true final boss.
+                            Most of my learning is an unintentional deep-dive: I'll download an app for "quick recon," start reversing it like a absolute madman, and suddenly I'm trapped in a 6-month research loop trying to figure out why the binary behaves like a sentient puzzle box—complete with troubleshooting and debugging sessions I definitely never requested. <span style={{ color: 'var(--primary-color)' }}>The true final boss.</span>
+                            <br /><br />
+                            Even Smart Contract security can feel like a high-level raid with a 0% drop rate sometimes—it’s deceptively difficult, but that just makes the exploit more satisfying.
                         </p>
                         
                         <p style={{ marginBottom: '1rem', color: 'var(--text-secondary)', fontWeight: 'bold' }}>Lore Dump About Me:</p>
