@@ -11,6 +11,11 @@ const BackgroundMusic = () => {
     if (!audio) return;
 
     audio.volume = 0.4;
+    
+    // One-time cleanup for legacy auth data
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('password_attempts');
+    }
 
     const attemptPlay = () => {
       const playPromise = audio.play();
