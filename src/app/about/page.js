@@ -61,7 +61,7 @@ export default function About() {
                             {[
                                 "Plays FPS, RPG, MMORPG, and turn-based games because committing to one genre is too mainstream",
                                 "Currently trapped in the iOS Application Exploitation Challenge Saga",
-                                "Says 'yeah why not' to game CTFs, AI Security CTFs, or blockchain CTFs like they're just optional DLC side-quests.",
+                                "Says 'yeah why not' to game CTFs or blockchain CTFs like they're just optional DLC side-quests.",
                                 "Watches anime and reads manga for emotional support",
                                 "CRITICAL ALERT: Mornye's CUTE and BEAUTIFUL parameters have exceeded safety limits! 🚨 Unhackable levels of peak aesthetic detected... (˶˃ ᵕ ˂˶) .ᐟ.ᐟ"
                             ].map((item, index) => (
