@@ -62,9 +62,8 @@ export default function About() {
                         <ul style={{ listStyle: 'disc', paddingLeft: '1.5rem', marginBottom: '1.5rem' }}>
                             {[
                                 "Plays FPS, RPG, MMORPG, and turn-based games because committing to one genre is too mainstream",
-                                "Currently trapped in the iOS Application Exploitation Challenge Saga",
-                                "Says 'yeah why not' to game CTFs or blockchain CTFs like they're just optional DLC side-quests.",
                                 "Watches anime and reads manga for emotional support",
+                                "ERROR: 0xSLEEP_DEP_FOUND — Attempting to reboot consciousness... Sleep is Powerful (but vulnerability research is eternal) 💤🔥",
                                 "CRITICAL ALERT: Mornye's CUTE and BEAUTIFUL parameters have exceeded safety limits! 🚨 Unhackable levels of peak aesthetic detected... (˶˃ ᵕ ˂˶) .ᐟ.ᐟ"
                             ].map((item, index) => (
                                 <li key={index} style={{ marginBottom: '0.5rem', color: 'var(--text-color)' }}>
