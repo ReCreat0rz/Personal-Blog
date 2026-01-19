@@ -39,12 +39,16 @@
   --api-width: 800px;
   --header-height: 70px;
 
-  /* Cyber Grid Background */
-  --bg-gradient:
-    linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px),
-    radial-gradient(circle at 50% 0%, #1a1b26 0%, #050505 60%);
-  --bg-size: 40px 40px, 40px 40px, 100% 100%;
+  /* Celestial Starfield Background */
+  --bg-gradient: 
+    radial-gradient(1px 1px at 20px 30px, #eee, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 50px 160px, #ddd, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0)),
+    radial-gradient(circle at 50% 0%, #1a1b26 0%, #050505 80%);
+  --bg-size: 200px 200px, 200px 200px, 200px 200px, 200px 200px, 200px 200px, 200px 200px, 100% 100%;
 }
 
 
